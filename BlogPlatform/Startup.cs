@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using BlogPlatform;
+using BlogPlatform.BlogRepository;
+using BlogPlatform.Models;
 
 namespace blog_template_practice
 {
@@ -24,7 +27,15 @@ namespace blog_template_practice
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc().AddRazorRuntimeCompilation();
+
+
+            services.AddDbContext<BlogContext>();
+
+            services.AddScoped<IRepository<Content>, BlogRepository>();
+          //  services.AddScoped<IRepository<Category>, BlogRepository>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +54,7 @@ namespace blog_template_practice
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Category}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

@@ -1,0 +1,39 @@
+﻿@model BlogPlatform.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 style="color:aquamarine">@Model.Name</h1>
+
+<div style="color:aquamarine">
+    
+    <hr />
+    
+      
+
+                <td>
+                    <ul>
+                        @foreach (var am in Model.Contents)
+                        {
+
+                        <li style="text-decoration:none">
+                            <h4>@am.Body</h4>
+                            <samp style="color:aqua" >   <h5>@am.Author    
+                                               @am.time.Year/@am.time.Month  </h5>
+                            </samp>
+                            <br>
+                            <br>
+                        </li>
+                        }
+                    </ul>
+                </td>
+
+
+</div>
+<div>
+
+    <a asp-action="Create" asp-controller="Contents">Create New Blog</a>
+    <br/>
+    <a asp-action="Index">Back to List</a>
+</div>

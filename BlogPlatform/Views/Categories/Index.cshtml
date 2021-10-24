@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BlogPlatform.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div >
+
+
+    <table class="table" style="color:aqua">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>   Topics Authors   </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
+                    </td>
+
+                    <td>
+                        <ul>
+                            @foreach (var am in item.Contents)
+                            {
+                                <li>@am.Author</li>
+                            }
+                        </ul>
+                    </td>
+
+
+
+
+                    <td>
+                     
+
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p>
+        <a asp-action="Create">Add New Category</a>
+    </p>
+
+</div>

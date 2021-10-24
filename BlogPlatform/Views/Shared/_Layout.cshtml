@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title style="color:orange"> @ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheet/st3.css" />
+</head>
+<body>
+
+    <header>
+        <h4 class="text-center  text-decoration-none">
+            <span class="p-2"><a href="/Home/Index" rel="noopener noreferrer" class="text-decoration-none">HOME</a></span>
+
+            <span class="p-2"><a href="/Categories/Index" rel="noopener noreferrer" class="text-decoration-none">CATEGORIES</a></span>
+            <span class="p-2"><a href="/Contents/Index" rel="noopener noreferrer" class="text-decoration-none">CONTENT</a></span>
+        </h4>
+
+
+
+    </header>
+
+
+
+
+    <div class="container">
+        <h1 class="text-center">
+          blog platform
+        </h1>
+        <div class="container">
+            @RenderBody()
+        </div>
+
+     
+    </div>
+
+    @RenderSection("Scripts", required: false)
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+
+</html>
